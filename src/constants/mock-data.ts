@@ -26,3 +26,4 @@ export const MOCK_SUBJECTS: Subject[] = [
     createdAt: new Date().toISOString(),
   },
 ];
+
