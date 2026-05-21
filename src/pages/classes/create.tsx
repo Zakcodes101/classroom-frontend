@@ -101,10 +101,10 @@ const ClassesCreate = () => {
     },
   });
 
-  const teachers = teachersQuery.data?.data || [];
+  const teachers = teachersQuery?.data?.data || [];
   const teachersLoading = teachersQuery.isLoading;
 
-  const subjects = subjectsQuery.data?.data || [];
+  const subjects = subjectsQuery?.data?.data || [];
   const subjectsLoading = subjectsQuery.isLoading;
 
   return (
