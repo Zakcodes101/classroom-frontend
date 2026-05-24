@@ -34,9 +34,9 @@ const Show = () => {
     );
   }
 
-  const teacherName = classDetails.teacher?.name ?? "Umknown";
+  const teacherName = classDetails.teacher?.name ?? "Unknown";
   const teacherInitials = teacherName
-    .split("")
+    .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
     .map((part) => part[0]?.toUpperCase())
@@ -63,11 +63,13 @@ const Show = () => {
       <ShowViewHeader resource="classes" title="Class Details" />
 
       <div className="banner">
-        {bannerUrl ? (
+        {bannerCldPubId ? (
           <AdvancedImage
             alt="Class Banner"
-            cldImg={bannerPhoto(bannerCldPubId ?? "", name)}
+            cldImg={bannerPhoto(bannerCldPubId, name)}
           />
+        ) : bannerUrl ? (
+          <img src={bannerUrl} alt="Class Banner" />
         ) : (
           <div className="placeholder" />
         )}
