@@ -19,6 +19,7 @@ import SubjectsList from "@/pages/subjects/List";
 import SubjectsCreate from "@/pages/subjects/Create.tsx";
 import ClassesList from "@/pages/classes/list";
 import ClassesCreate from "@/pages/classes/create";
+import ClassesShow from "@/pages/classes/show";
 function App() {
   return (
     <BrowserRouter>
@@ -50,6 +51,7 @@ function App() {
                   name: "classes",
                   list: "/classes",
                   create: "/classes/create",
+                  show: "/classes/show/:id",
                   meta: { label: "Classes", icon: <GraduationCap /> },
                 },
               ]}
@@ -65,12 +67,13 @@ function App() {
                   <Route path="/" element={<Dashboard />} />
 
                   <Route path="subjects">
-                    <Route index element={<SubjectsList/>}/>
-                    <Route path="create" element={<SubjectsCreate/>}/>
+                    <Route index element={<SubjectsList />} />
+                    <Route path="create" element={<SubjectsCreate />} />
                   </Route>
                   <Route path="classes">
-                    <Route index element={<ClassesList/>}/>
-                    <Route path="create" element={<ClassesCreate/>}/>
+                    <Route index element={<ClassesList />} />
+                    <Route path="create" element={<ClassesCreate />} />
+                    <Route path="show/:id" element={<ClassesShow />} />
                   </Route>
                 </Route>
               </Routes>
